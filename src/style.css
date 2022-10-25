@@ -37,6 +37,34 @@ a:focus {
   text-decoration: underline;
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.pokeContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokeAssets {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment {
+  margin: 10px 0;
+}
+
 .footer {
   display: flex;
   flex-direction: row;

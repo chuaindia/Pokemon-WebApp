@@ -6,6 +6,7 @@ const logo = document.querySelector('.logo');
 logo.innerHTML = `<img src="${pokelogo}" alt="pokemon-logo"> `;
 
 const mainUrl = 'https://pokeapi.co/api/v2/';
+const main = document.querySelector('main');
 
 const getPokemons = async () => {
   const resp = await fetch(`${mainUrl}pokemon?limit=30`);
@@ -24,5 +25,18 @@ const fetchPokemon = async (pokemon) => {
 }
 
 const displayPokemon = (pokemon) => {
-  
+  const pokeContainer = document.createElement('div');
+  pokeContainer.className = 'pokeContainer';
+  pokeContainer.innerHTML = `<img src="" alt="pokeImage" class="pokeImage">
+  <div class="pokeAssets">
+    <h2 class="pokeName">NAme</h2>
+    <div class="like">
+      <img src="" alt="likeIcon" class="likeIcon">
+      <span class="likeCount">9</span>
+    </div>
+  </div>
+  <button class="comment">Comments</button>
+  <button class="reservation">Reservations</button>`;
+
+  main.appendChild(pokeContainer);
 }
