@@ -4,7 +4,8 @@ header {
   align-items: center;
   justify-content: space-around;
 }
-.logo img{
+
+.logo img {
   height: 60px;
 }
 
@@ -21,7 +22,8 @@ a {
   font-weight: bold;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   text-decoration: underline;
 }
 
