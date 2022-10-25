@@ -17,15 +17,13 @@ a {
 }
 
 .footer {
-    display: flex;
-    flex-direction: row;
-    font-family: 'Roboto', sans-serif;
-    background-color: white;
-    justify-content: space-around;
-    align-items: center;
-    padding: 1rem;
-    color: white;
-    bottom: 0;
-    width: 100%;
-    border: 1px solid black;
-  }
+  display: flex;
+  flex-direction: row;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  padding: 1rem;
+  color: black;
+  bottom: 0;
+  width: 97%;
+  border: 2px solid black;
+}
