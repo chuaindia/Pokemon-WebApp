@@ -33,6 +33,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "file-loader": "^6.2.0",
+    "lodash": "^4.17.21",
+    "url-loader": "^4.1.1"
   }
 }
