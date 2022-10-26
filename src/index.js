@@ -9,22 +9,6 @@ logo.innerHTML = `<img src="${pokelogo}" alt="pokemon-logo"> `;
 const mainUrl = 'https://pokeapi.co/api/v2/';
 const main = document.querySelector('main');
 
-const getPokemons = async () => {
-  const resp = await fetch(`${mainUrl}pokemon?limit=30`);
-  const pokemons = await resp.json();
-  pokemons.results.forEach(pokemon => {
-    fetchPokemon(pokemon);
-  });
-  
-}
-
-const fetchPokemon = async (pokemon) => {
-  let pokeurl = pokemon.url;
-  const response = await fetch(pokeurl);
-  const pokeData = await response.json();
-  displayPokemon(pokeData);
-}
-
 const displayPokemon = (pokemon) => {
   const pokeContainer = document.createElement('div');
   pokeContainer.className = 'pokeContainer';
@@ -40,6 +24,21 @@ const displayPokemon = (pokemon) => {
   <button class="reservation btn">Reservations</button>`;
 
   main.appendChild(pokeContainer);
-}
+};
+
+const fetchPokemon = async (pokemon) => {
+  const pokeurl = pokemon.url;
+  const response = await fetch(pokeurl);
+  const pokeData = await response.json();
+  displayPokemon(pokeData);
+};
+
+const getPokemons = async () => {
+  const resp = await fetch(`${mainUrl}pokemon?limit=30`);
+  const pokemons = await resp.json();
+  pokemons.results.forEach((pokemon) => {
+    fetchPokemon(pokemon);
+  });
+};
 
 getPokemons();
