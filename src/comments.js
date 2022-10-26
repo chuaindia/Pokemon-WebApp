@@ -3,7 +3,7 @@
 /* eslint-disable import/named */
 /* eslint-disable import/extensions */
 
-import { pokeCall } from './apiCall.js';
+import pokeCall from './apiCall.js';
 
 // Involment POST and GET
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/comments';
