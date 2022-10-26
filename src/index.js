@@ -1,8 +1,5 @@
 /* eslint-disable linebreak-style */
 import './style.css';
-
-//feature-add-comment
-
 import pokelogo from './images/pokelogo.png';
 import likeIcon from './images/like.png';
 
