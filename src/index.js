@@ -36,8 +36,8 @@ const displayPokemon = (pokemon) => {
       <span class="likeCount">9</span>
     </div>
   </div>
-  <button class="comment">Comments</button>
-  <button class="reservation">Reservations</button>`;
+  <button class="comment btn">Comments</button>
+  <button class="reservation btn">Reservations</button>`;
 
   main.appendChild(pokeContainer);
 }
