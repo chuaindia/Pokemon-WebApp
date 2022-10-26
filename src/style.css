@@ -1,8 +1,281 @@
+* {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #28292c;
+  position: relative;
+}
+
+h2,
+h3 {
+  color: white;
+  margin: 48px 0 12px;
+}
+
+#wrapper {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+#stats-window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: gray;
+}
+
+.pokeContainer p {
+  margin: 0;
+  margin-top: -15px;
+  font-size: 2vw;
+}
+
+#stats-window p {
+  color: white;
+  margin: 12px 0 0 12px;
+}
+
+#stats-section {
+  position: relative;
+  background-color: tomato;
+  border-radius: 0 0 30px 30px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#comment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 96px 0 0 0;
+}
+
+#close {
+  align-self: flex-end;
+  position: absolute;
+  margin: 24px;
+}
+
+#photo {
+  width: 20vw;
+}
+
+#type-tex {
+  background-color: #8a0029;
+  border-radius: 30px;
+  padding: 6px;
+}
+
+.form-class {
+  display: flex;
+  flex-direction: column;
+  max-width: 50vw;
+}
+
+.form-class input {
+  margin: 12px 0 12px;
+  font-size: 1vw;
+  max-height: 5vh;
+  min-height: 2.5vh;
+}
+
+.form-class textarea {
+  margin: 12px 0 12px;
+  font-size: 1vw;
+  max-height: 10vh;
+  min-height: 5vh;
+}
+
+.form-class button {
+  margin: 12px 0 12px;
+}
+
+/* TODO: make changes by moving the buttons down, bigger/other fonts */
+.pokeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 150px;
+  height: 300px;
+  border-radius: 15px;
+  margin: 5px;
+  color: aliceblue;
+}
+
+.pokeContainer.p {
+  margin: 5px;
+  margin-top: -15px;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+footer span {
+  background-color: inherit;
+  margin: 0;
+  padding-left: 40px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.pokeContainer span {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  margin: 0;
+}
+
+.pokeContainer div {
+  height: 10px;
+  margin: 0;
+  margin-bottom: -8px;
+}
+
+.pokeContainer:hover {
+  transform: scale(1.05);
+}
+
+.pikachu {
+  background-color: #ffcb71;
+}
+
+.mew {
+  background-color: rgb(229, 189, 255);
+}
+
+.gengar {
+  background-color: rgb(58, 82, 177);
+}
+
+.mewtwo {
+  background-color: rgb(179, 179, 255);
+}
+
+.lugia {
+  background-color: #5c38ff;
+}
+
+.ninetales {
+  background-color: #ff4b81;
+}
+
+.charizard {
+  background-color: #f8a060;
+}
+
+.cresselia {
+  background-color: #c976f8;
+}
+
+.pokeFoto {
+  width: 120px;
+  height: 120px;
+}
+
+.btn,
+.send-comment {
+  background: #7c7c7c;
+  border-bottom: 3px inset rgba(0, 0, 0, 0.5);
+  border-left: 3px inset rgba(0, 0, 0, 0.5);
+  border-right: 3px inset rgba(255, 255, 255, 0.5);
+  border-top: 3px inset rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 6px;
+  margin: 10px;
+  min-width: 90px;
+  padding: 0.1rem;
+  width: auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn.primary {
+  background: #005800;
+  margin-bottom: -5px;
+}
+
+.btn.primary:hover {
+  background: #098509;
+}
+
+.btn.secondary {
+  background: #0000bc;
+}
+
+.send-comment {
+  background: #ff4b81;
+  font-size: 0.9vw;
+  width: 30vw;
+  max-height: 10vh;
+  min-height: 5vh;
+  align-self: center;
+}
+
+#comment-window {
+  display: none;
+}
 
 header {
+  height: 250px;
+  background-image: url(banner.jpg);
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-color: #a2e8ff;
+  background-position: 80% 50%;
+  border-bottom: 10px inset black;
+  border-left: 10px inset black;
+  border-right: 10px inset gray;
+  border-top: 10px inset gray;
+}
+
+nav ul {
+  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 50%;
+  font-family: 'Roboto', sans-serif;
+  padding-left: 5%;
+}
+
+nav {
+  padding-top: 10px;
+}
+
+a {
+  color: gray;
+  line-height: 25px;
+}
+
+li {
+  margin-right: 20px;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  margin-left: 7%;
+  margin-top: 2%;
+  line-height: 5vw;
+  font-size: 3.9vw;
+}
+
+#logoContainer {
+  border: solid 2px orange;
+  width: 50px;
+  height: 50px;
 }
 
 .logo img {
@@ -14,12 +287,6 @@ header {
   display: flex;
   gap: 60px;
   padding: 20px;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
 }
 
 a:hover,
