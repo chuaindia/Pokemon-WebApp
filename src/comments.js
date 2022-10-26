@@ -1,6 +1,8 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import { pokeCall } from './apiCall.js';
-import close from './cancel.png';
+import 'src/images/cancel.png';
 
 // POST and GET: Involment API
 const APIKey = 'ntSEDKBSp5jVB8zr1TJB';
@@ -57,7 +59,7 @@ const renderPokemonStats = (poke) => {
   const htmlSegment = `
   <div id="stats-window">
     <div id="stats-section">
-      <img src="${close}" id="close" width="48">
+      <img src="cancel.png" id="close" width="48">
       <img src="${pokeImg}" id="photo" width="160">
     </div>
     <h2>${pokeName}</h2>
