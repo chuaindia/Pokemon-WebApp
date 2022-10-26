@@ -2,7 +2,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
 import { pokeCall } from './apiCall.js';
-import 'src/images/cancel.png';
+import 'src/cancel.png';
 
 // POST and GET: Involment API
 const APIKey = 'ntSEDKBSp5jVB8zr1TJB';
