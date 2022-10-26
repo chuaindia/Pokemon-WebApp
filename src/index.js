@@ -55,3 +55,4 @@ for (let i = 0; i < examplePokeArr.length; i += 1) {
 }
 
 export { Pokedex, myPokedex, examplePokeArr };
+
