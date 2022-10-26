@@ -5,6 +5,7 @@ import './style.css';
 import { pokeCall } from './apiCall.js';
 import { toggle } from './comments.js';
 
+
 class Pokedex {
   constructor() {
     this.pokeList = [];
