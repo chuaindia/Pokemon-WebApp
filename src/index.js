@@ -2,10 +2,7 @@
 import './style.css';
 
 //feature-add-comment
-import { pokeCall } from './apiCall.js';
-import { toggle } from './comments.js';
-import Pokeball from './pokeball.png';
-import Heart from './heart.png';
+
 import pokelogo from './images/pokelogo.png';
 import likeIcon from './images/like.png';
 
