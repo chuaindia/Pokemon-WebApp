@@ -16,7 +16,7 @@ header {
 }
 
 .logo img {
-  height: 60px;
+  height: 100px;
 }
 
 .nav {
@@ -37,13 +37,75 @@ a:focus {
   text-decoration: underline;
 }
 
-.footer {
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 40px 0;
+}
+
+.pokeContainer {
+  margin: 20px 40px;
+  padding: 20px;
   display: flex;
-  flex-direction: row;
-  font-family: 'Roboto', sans-serif;
-  background-color: white;
+  flex-direction: column;
+  background-color: #dbdbdb;
+  border-radius: 5%;
+  border: #bdbdbd 1px solid;
+}
+
+.pokeContainer:hover {
+  background-color: #e7e7ff;
+  border: #00f7 1px solid;
+}
+
+.pokeImage {
+  width: 120px;
+  align-self: center;
+}
+
+.pokeAssets {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pokeName {
+  text-transform: capitalize;
+}
+
+.like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.likeIcon {
+  width: 20px;
+  cursor: pointer;
+}
+
+.btn {
+  margin: 10px 0;
+  width: 60%;
+  align-self: center;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #615eff;
+  border: #0300b9 1px solid;
+}
+
+.btn:hover {
+  background-color: #ffae00;
+}
+
+.reservation {
+  width: 70%;
+}
+
+.footer {
+  position: fixed;
   padding: 1rem;
-  color: black;
   bottom: 0;
   width: 97%;
   border: 2px solid black;
