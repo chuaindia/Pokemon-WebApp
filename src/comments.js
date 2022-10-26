@@ -4,7 +4,6 @@
 /* eslint-disable import/extensions */
 
 import { pokeCall } from './apiCall.js';
-import close from './cancel.png';
 
 // Involment POST and GET
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/comments';
@@ -48,7 +47,7 @@ const displayPokemonStats = (e) => {
     const htmlSegment = `
     <div id="stats-window">
       <div id="stats-section">
-        <img src="${close}" id="close" width="48">
+        <img src="src/cancel.png" id="close" width="48">
         <img src="${pokeImg}" id="photo" width="160">
       </div>
       <h2>${pokeName}</h2>

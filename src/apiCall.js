@@ -7,4 +7,4 @@ const pokeCall = async (e) => {
   return pokemonInfo;
 };
 
-export default { pokeCall };
+export default pokeCall;
