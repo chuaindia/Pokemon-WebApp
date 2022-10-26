@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import './style.css';
 import pokelogo from './images/pokelogo.png';
+import likeIcon from './images/like.png';
 
 const logo = document.querySelector('.logo');
 logo.innerHTML = `<img src="${pokelogo}" alt="pokemon-logo"> `;
@@ -21,17 +22,17 @@ const fetchPokemon = async (pokemon) => {
   let pokeurl = pokemon.url;
   const response = await fetch(pokeurl);
   const pokeData = await response.json();
-  return pokeData;
+  displayPokemon(pokeData);
 }
 
 const displayPokemon = (pokemon) => {
   const pokeContainer = document.createElement('div');
   pokeContainer.className = 'pokeContainer';
-  pokeContainer.innerHTML = `<img src="" alt="pokeImage" class="pokeImage">
+  pokeContainer.innerHTML = `<img src="${pokemon.sprites.front_shiny}" alt="pokeImage" class="pokeImage">
   <div class="pokeAssets">
-    <h2 class="pokeName">NAme</h2>
+    <h2 class="pokeName">${pokemon.name}</h2>
     <div class="like">
-      <img src="" alt="likeIcon" class="likeIcon">
+      <img src="${likeIcon}" alt="likeIcon" class="likeIcon">
       <span class="likeCount">9</span>
     </div>
   </div>
@@ -40,3 +41,5 @@ const displayPokemon = (pokemon) => {
 
   main.appendChild(pokeContainer);
 }
+
+getPokemons();
