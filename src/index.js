@@ -1,10 +1,8 @@
 /* eslint-disable linebreak-style */
+
 import './style.css';
 import pokelogo from './images/pokelogo.png';
 import likeIcon from './images/like.png';
-
-const logo = document.querySelector('.logo');
-logo.innerHTML = `<img src="${pokelogo}" alt="pokemon-logo"> `;
 
 const mainUrl = 'https://pokeapi.co/api/v2/';
 const main = document.querySelector('main');
