@@ -20,5 +20,5 @@ const likePost = async (e) => {
   const likeUpdate = await response.json();
   return likeUpdate;
 };
-// eslint-disable-next-line import/prefer-default-export
+  // eslint-disable-next-line import/prefer-default-export
 export { pokeCall, likeCall, likePost };
