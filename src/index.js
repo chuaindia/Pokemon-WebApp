@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
-
+/* eslint-disable import/named */
+/* eslint-disable max-classes-per-file */
 import './style.css';
 import pokeCall from './apiCall.js';
 import { toggle } from './comments.js';
@@ -34,6 +35,7 @@ class Pokedex {
     pokeContainer.appendChild(nameTest);
     pokeContainer.appendChild(commentBttn);
     pokeContainer.appendChild(reserveBttn);
+
     wrapper.appendChild(pokeContainer);
   }
 
@@ -51,5 +53,5 @@ const myPokedex = new Pokedex();
 for (let i = 0; i < examplePokeArr.length; i += 1) {
   myPokedex.getPokemon(examplePokeArr[i]);
 }
-getPokemons();
 
+export { Pokedex, myPokedex, examplePokeArr };
