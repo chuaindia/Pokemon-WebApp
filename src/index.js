@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+
 import './style.css';
 import likeIcon from './images/like.png';
 
