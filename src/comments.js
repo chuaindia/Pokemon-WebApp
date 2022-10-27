@@ -58,7 +58,6 @@ const displayPokemonStats = (e) => {
       <p>Height: ${pokeHeight}</p>
       <p>Power: ${pokePower}</p>
       <comments-section id="comment-section" class="comments-section">
-        <h3>Best Comments</h3>
         <div class="container"></div>
         <ul class="comments-list" style="display: none;"></ul>
         <h3>Add your comment</h3>
