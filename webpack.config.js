@@ -8,6 +8,9 @@ module.exports = {
   devServer: {
     static: './dist',
   },
+  experiments: {
+    topLevelAwait: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',

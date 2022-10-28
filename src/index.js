@@ -10,15 +10,26 @@ logo.innerHTML = `<img src="${pokelogo}" alt="pokemon-logo"> `;
 const mainUrl = 'https://pokeapi.co/api/v2/';
 const main = document.querySelector('main');
 
+const invoUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+const appId = 'scLRTVqWFoqoog0Hjt1E';
+
+const getLikes = async () => {
+  const response = await fetch(`${invoUrl}${appId}/likes/`);
+  const data = await response.json();
+  return data;
+};
+
+const likes = await getLikes();
+
 const displayPokemon = (pokemon) => {
   const pokeContainer = document.createElement('div');
   pokeContainer.className = 'pokeContainer';
   pokeContainer.innerHTML = `<img src="${pokemon.sprites.front_shiny}" alt="pokeImage" class="pokeImage">
   <div class="pokeAssets">
-    <h2 class="pokeName">${pokemon.name}</h2>
+    <h2 id="pokemon${pokemon.id}"class="pokeName">${pokemon.name}</h2>
     <div class="like">
       <img src="${likeIcon}" alt="likeIcon" class="likeIcon">
-      <span class="likeCount">9</span>
+      <span class="likeCount"></span>
     </div>
   </div>
   <button id="${pokemon.id}"class="comment btn">Comments</button>
@@ -60,6 +71,17 @@ const displayPokemon = (pokemon) => {
       modalContainer.style.display = 'none';
     });
   });
+
+  const poke = document.querySelector(`#pokemon${pokemon.id}`);
+  const field = poke.nextElementSibling.children[1];
+  const name = poke.innerHTML;
+  const likeArr = likes.filter((el) => el.item_id === name) || [];
+  let numberOfLikes = 0;
+  if (likeArr.length !== 0) {
+    numberOfLikes = likeArr[0].likes;
+  }
+
+  field.innerHTML = `${numberOfLikes}`;
 };
 
 const fetchPokemon = async (pokemon) => {
