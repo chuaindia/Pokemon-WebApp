@@ -19,6 +19,18 @@ const getLikes = async () => {
   return data;
 };
 
+const addLike = async (name) => {
+  const response = await fetch(`${invoUrl}${appId}/likes/`, {
+    method: 'POST',
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify({
+      item_id: name
+    }),
+  });
+  const data = await response.json();
+  return data;
+}
+
 const likes = await getLikes();
 
 const displayPokemon = (pokemon) => {
