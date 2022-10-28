@@ -19,6 +19,12 @@ const getLikes = async () => {
   return data;
 };
 
+const getComments = async (item) => {
+  const response = await fetch(`${invoUrl}${appId}/comments?item_id=${item}`);
+  const data = await response.json().catch((error) => [error]);
+  return data;
+};
+
 const addLike = async (name) => {
   const response = await fetch(`${invoUrl}${appId}/likes/`, {
     method: 'POST',
@@ -81,6 +87,20 @@ const displayPokemon = (pokemon) => {
     close.addEventListener('click', () => {
       modalContainer.style.display = 'none';
     });
+    const commentsField = document.querySelector('.actual-comments');
+    let comments = [];
+    const displayComments = async () => {
+      comments = await getComments(pokemon.name) || [];
+      if (comments.length !== 0) {
+        comments.forEach((comment) => {
+          const commentContainer = document.createElement('p');
+          commentContainer.innerHTML = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
+          commentsField.appendChild(commentContainer);
+        });
+      }
+    };
+
+    displayComments();
   });
 
   const poke = document.querySelector(`#pokemon${pokemon.id}`);
