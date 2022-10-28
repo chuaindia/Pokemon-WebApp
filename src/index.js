@@ -89,9 +89,11 @@ const getPokemons = async () => {
 
 getPokemons();
 
-const countItems = () => {
+
+const countItems = async () => {
   let numberOfItems = document.querySelectorAll('.pokeContainer').length;
-  console.log(numberOfItems);
+  const items = document.querySelector('.all-items');
+  items.innerHTML = `(${numberOfItems})`;
 }
 
 setTimeout(countItems,3000);
