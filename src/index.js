@@ -24,10 +24,11 @@ const addLike = async (name) => {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
-      item_id: name
+      item_id: name,
     }),
   });
-}
+  await response.json();
+};
 
 let likes = await getLikes();
 
@@ -59,17 +60,16 @@ const displayPokemon = (pokemon) => {
     if (likeArr.length !== 0) {
       numberOfLikes = likeArr[0].likes;
     }
-    
+
     field.innerHTML = `${numberOfLikes}`;
-  }
+  };
 
   like.addEventListener('click', async () => {
     addLike(pokemon.name);
-    field.innerHTML = parseInt(field.innerHTML) + 1;
+    field.innerHTML = parseInt(field.innerHTML, 10) + 1;
   });
 
   displayLikes();
-
 };
 
 const fetchPokemon = async (pokemon) => {
