@@ -9,6 +9,76 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.modal-container {
+  display: none;
+  height: 100%;
+  position: fixed;
+  background-color: #bdbdbd;
+  left: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.modal-image {
+  display: grid;
+  grid-template-columns: 45% 45% 10%;
+  justify-items: center;
+}
+
+.close a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.close a:hover {
+  text-decoration: none;
+}
+
+.pokemon-name {
+  text-align: center;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+.parameters {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  padding: 40px;
+  width: 70%;
+  justify-items: center;
+  margin: auto;
+}
+
+.comments {
+  padding: 0 40px;
+}
+
+.commentsTitle {
+  text-align: center;
+}
+
+.add-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-title {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+form > * {
+  margin: 5px;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -26,14 +96,14 @@ header {
   padding: 20px;
 }
 
-a {
+.nav .nav-link a {
   text-decoration: none;
   color: #000;
   font-weight: bold;
 }
 
-a:hover,
-a:focus {
+.nav .nav-link a:hover,
+.nav .nav-link a:focus {
   text-decoration: underline;
 }
 
