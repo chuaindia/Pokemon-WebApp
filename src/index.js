@@ -88,3 +88,10 @@ const getPokemons = async () => {
 };
 
 getPokemons();
+
+const countItems = () => {
+  let numberOfItems = document.querySelectorAll('.pokeContainer').length;
+  console.log(numberOfItems);
+}
+
+setTimeout(countItems,3000);
