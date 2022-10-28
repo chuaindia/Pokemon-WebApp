@@ -19,7 +19,18 @@ const getLikes = async () => {
   return data;
 };
 
-const likes = await getLikes();
+const addLike = async (name) => {
+  const response = await fetch(`${invoUrl}${appId}/likes/`, {
+    method: 'POST',
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify({
+      item_id: name,
+    }),
+  });
+  await response.json();
+};
+
+let likes = await getLikes();
 
 const displayPokemon = (pokemon) => {
   const pokeContainer = document.createElement('div');
@@ -74,14 +85,26 @@ const displayPokemon = (pokemon) => {
 
   const poke = document.querySelector(`#pokemon${pokemon.id}`);
   const field = poke.nextElementSibling.children[1];
-  const name = poke.innerHTML;
-  const likeArr = likes.filter((el) => el.item_id === name) || [];
-  let numberOfLikes = 0;
-  if (likeArr.length !== 0) {
-    numberOfLikes = likeArr[0].likes;
-  }
+  const like = poke.nextElementSibling.children[0];
 
-  field.innerHTML = `${numberOfLikes}`;
+  const displayLikes = async () => {
+    likes = await getLikes();
+    const name = poke.innerHTML;
+    const likeArr = likes.filter((el) => el.item_id === name) || [];
+    let numberOfLikes = 0;
+    if (likeArr.length !== 0) {
+      numberOfLikes = likeArr[0].likes;
+    }
+
+    field.innerHTML = `${numberOfLikes}`;
+  };
+
+  like.addEventListener('click', async () => {
+    addLike(pokemon.name);
+    field.innerHTML = parseInt(field.innerHTML, 10) + 1;
+  });
+
+  displayLikes();
 };
 
 const fetchPokemon = async (pokemon) => {
@@ -100,3 +123,11 @@ const getPokemons = async () => {
 };
 
 getPokemons();
+
+const countItems = async () => {
+  const numberOfItems = document.querySelectorAll('.pokeContainer').length;
+  const items = document.querySelector('.all-items');
+  items.innerHTML = `(${numberOfItems})`;
+};
+
+setTimeout(countItems, 3000);
