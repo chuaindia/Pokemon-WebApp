@@ -36,6 +36,17 @@ const displayPokemon = (pokemon) => {
   <button class="reservation btn">Reservations</button>`;
 
   main.appendChild(pokeContainer);
+
+  const poke = document.querySelector(`#pokemon${pokemon.id}`);
+  const field = poke.nextElementSibling.children[1];
+    let name = poke.innerHTML;
+    let likeArr = likes.filter((el)=>{el.item_id == name}) || [];
+    let numberOfLikes = 0;
+    if(likeArr.length !== 0){
+      numberOfLikes = likeArr[0].likes;
+    }
+    
+    field.innerHTML = `${numberOfLikes}`;
 };
 
 const fetchPokemon = async (pokemon) => {
