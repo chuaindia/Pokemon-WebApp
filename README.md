@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# JAVASCRIPT CAPSTONE Project - API based webapp
+# JAVASCRIPT CAPSTONE Project - API based webapp(Pokemon-WebApp)
 
 
 > The Javascript capstone project is about building a web application based on an external API.
