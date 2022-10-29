@@ -36,7 +36,7 @@ GITFLOW
 
 ## Getting Started
 
-Created a repository, cloned it in the local location. Git flow is used. Webpack is set up. Javascript testing library is set up. To-Do-List in the Kanban Board is set up.
+Created a repository, cloned it in the local location. Git flow is used. Webpack is set up. Javascript testing library (JEST) is set up. To-Do-List in the Kanban Board is set up.
 
 ### Prerequisites
 
