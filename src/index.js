@@ -25,6 +25,19 @@ const getComments = async (item) => {
   return data;
 };
 
+const addComment = async (name, user, com) => {
+  const response = await fetch(`${invoUrl}${appId}/comments/`, {
+    method: 'POST',
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify({
+      item_id: name,
+      username: user,
+      comment: com,
+    }),
+  });
+  await response.json();
+};
+
 const addLike = async (name) => {
   const response = await fetch(`${invoUrl}${appId}/likes/`, {
     method: 'POST',
@@ -71,8 +84,8 @@ const displayPokemon = (pokemon) => {
       </div>
       <div class="comments">
         <h3 class="commentsTitle">Comments</h3>
-        <p>first comment</p>
-        <p>second comment</p>
+        <div class="actual-comments">
+        </div>
       </div>
       <div class="add-comment">
         <h3 class="add-title">Add a comment</h3>
@@ -88,8 +101,13 @@ const displayPokemon = (pokemon) => {
       modalContainer.style.display = 'none';
     });
     const commentsField = document.querySelector('.actual-comments');
-    let comments = [];
+    const name = document.querySelector('#name');
+    const comment = document.querySelector('#comment');
+    const form = document.querySelector('form');
+
     const displayComments = async () => {
+      commentsField.innerHTML = '';
+      let comments = [];
       comments = await getComments(pokemon.name) || [];
       if (comments.length !== 0) {
         comments.forEach((comment) => {
@@ -99,6 +117,14 @@ const displayPokemon = (pokemon) => {
         });
       }
     };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      addComment(pokemon.name, name.value, comment.value);
+      document.querySelector('#comment').value = '';
+      document.querySelector('#name').value = '';
+      setTimeout(displayComments, 2000);
+    });
 
     displayComments();
   });
