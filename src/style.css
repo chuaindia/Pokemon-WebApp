@@ -17,6 +17,9 @@ body {
   left: 0;
   right: 0;
   padding: 20px;
+  overflow-y: auto;
+  padding-bottom: 100px;
+  box-sizing: border-box;
 }
 
 .modal-image {
@@ -55,6 +58,11 @@ body {
   padding: 0 40px;
 }
 
+.actual-comments {
+  margin: 20px;
+  text-align: center;
+}
+
 .commentsTitle {
   text-align: center;
 }
@@ -77,6 +85,11 @@ form {
 
 form > * {
   margin: 5px;
+  border-radius: 5px;
+}
+
+form input {
+  height: 30px;
 }
 
 header {
@@ -142,6 +155,10 @@ main {
 
 .pokeName {
   text-transform: capitalize;
+}
+
+.pokemon-image {
+  height: 200px;
 }
 
 .like {
