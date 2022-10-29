@@ -1,9 +1,14 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# TO DO LIST Project
+# JAVASCRIPT CAPSTONE Project - API based webapp
 
 
-> "To-Do-List" is a tool that helps to organize your day. It simply lists the things that one need to do and can be marked them as complete. This project is built using ES6 and Webpack. JavaScript arrays and objects are utilised to complete the project. The items can be added and removed from the list also.
+> The Javascript capstone project is about building a web application based on an external API.
+  The data of the webapp will be provided by the chosen API. 
+  The webapp will have a home page showing a list of items that can be "liked".
+  The webapp will contain a popup window with more data about an item which can be "commented".
+  The counters are made to count the number of "like"s and the "comments".
+  The tests are also incorporated for the counters.
 
 
 ## Built With
@@ -31,9 +36,7 @@ GITFLOW
 
 ## Getting Started
 
-Create a repository, clone it in the local location.
-
-Following the instructions progress is made.
+Create a repository, clone it in the local location. Git flow is used. Webpack is set up. Javascript testing library is set up. Set up the To-Do-List in the Kanban Board.
 
 ### Prerequisites
 
