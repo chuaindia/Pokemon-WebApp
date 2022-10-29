@@ -3,9 +3,9 @@
 import './style.css';
 import pokelogo from './images/pokelogo.png';
 import likeIcon from './images/like.png';
-import { displayComments, addComment } from './modules/comments_pop_up';
-import { countItems } from './modules/items_count';
-import { getLikes, addLike } from './modules/pokemon';
+import { displayComments, addComment } from './modules/comments_pop_up.js';
+import countItems from './modules/items_count.js';
+import { getLikes, addLike } from './modules/pokemon.js';
 
 const logo = document.querySelector('.logo');
 logo.innerHTML = `<img src="${pokelogo}" alt="pokemon-logo"> `;
@@ -127,6 +127,6 @@ const displayCountItems = async () => {
   const number = countItems();
   const items = document.querySelector('.all-items');
   items.innerHTML = `(${number})`;
-}
+};
 
-setTimeout(displayCountItems , 3000);
+setTimeout(displayCountItems, 3000);

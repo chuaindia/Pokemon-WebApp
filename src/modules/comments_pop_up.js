@@ -1,4 +1,5 @@
-import { commentsCount } from "./comments_count";
+import commentsCount from './comments_count.js';
+
 const invoUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 const appId = 'scLRTVqWFoqoog0Hjt1E';
 
@@ -7,9 +8,8 @@ export const getComments = async (item) => {
   const data = await response.json();
   if (response.status === 400) {
     return [];
-  } else {
-    return data;
   }
+  return data;
 };
 
 export const addComment = async (name, user, com) => {
@@ -25,12 +25,11 @@ export const addComment = async (name, user, com) => {
   await response.json();
 };
 
-
 const displayNumberComments = async () => {
   const number = commentsCount();
   const comments = document.querySelector('.comments-number');
   comments.innerHTML = `(${number})`;
-}
+};
 
 export const displayComments = async (id) => {
   const commentsField = document.querySelector('.actual-comments');

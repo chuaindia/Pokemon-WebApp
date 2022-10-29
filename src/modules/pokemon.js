@@ -17,4 +17,3 @@ export const addLike = async (name) => {
   });
   await response.json();
 };
-
