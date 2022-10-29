@@ -13,50 +13,68 @@
 
 ## Built With
 
-HTML
-
-CSS
-
-JAVASCRIPT
-
-ES6
-
-WEBPACK
-
-JEST
-
-GITFLOW
+- HTML, CSS, JavaScript
+- Webpack
+- Git & GitHub
 
 
 
-## Live Demo (if available)
+## Get Started
 
-
-
-
-## Getting Started
-
-Created a repository, cloned it in the local location. Git flow is used. Webpack is set up. Javascript testing library (JEST) is set up. To-Do-List in the Kanban Board is set up.
+To get the content of this project locally you need to run the following commands in your terminal.
 
 ### Prerequisites
+- IDE(code editor) like: **Vscode**, **Sublime**, etc. 
+- [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
 
 ### Setup
+1. Download the **Zip** file or clone the repo with:
+```bash
+git clone https://github.com/Samuellekpor/leaderboard.git
+```
+2. To access cloned directory run:
+```bash
+cd Pokemon-WebApp
+```
+3. Open it with the live server by running:
+```bash 
+npm run start
+```
 
 ### Install
+> To install linters and other project's dependencies run:
+```bash
+npm install
+```
+## Run Test for Linters
 
-### Usage
+For tracking linter errors locally you need to follow these steps:
 
-### Run tests
+1. For tracking linter errors in HTML files run:
+```bash 
+npx hint .
+```
 
+2. For tracking linter errors in CSS or SASS files run:
 
+```bash
+npx stylelint "\*_/_.{css,scss}"
+```
+
+3. For tracking linter errors in JavaScript files run:
+
+```bash
+npx eslint .
+```
 
 ## Authors
 
-👤 **Sammuel Lekpor**
+👤 **Sammuel LEKPOR**
 
-- GitHub: https://github.com/
-- Twitter: https://twitter.com/
-- LinkedIn: https://www.linkedin.com/in/
+- GitHub: [@githubhandle](https://github.com/Samuellekpor)
+- Twitter: [@twitterhandle](https://twitter.com/samuel_lekpor)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/sammuel-lekpor)
+
 
 👤 **Tanusri Ghosh**
 
