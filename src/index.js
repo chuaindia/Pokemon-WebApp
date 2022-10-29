@@ -3,51 +3,15 @@
 import './style.css';
 import pokelogo from './images/pokelogo.png';
 import likeIcon from './images/like.png';
+import { displayComments, addComment } from './modules/comments_pop_up';
+import { countItems } from './modules/items_count';
+import { getLikes, addLike } from './modules/pokemon';
 
 const logo = document.querySelector('.logo');
 logo.innerHTML = `<img src="${pokelogo}" alt="pokemon-logo"> `;
 
 const mainUrl = 'https://pokeapi.co/api/v2/';
 const main = document.querySelector('main');
-
-const invoUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-const appId = 'scLRTVqWFoqoog0Hjt1E';
-
-const getLikes = async () => {
-  const response = await fetch(`${invoUrl}${appId}/likes/`);
-  const data = await response.json();
-  return data;
-};
-
-const getComments = async (item) => {
-  const response = await fetch(`${invoUrl}${appId}/comments?item_id=${item}`);
-  const data = await response.json().catch((error) => [error]);
-  return data;
-};
-
-const addComment = async (name, user, com) => {
-  const response = await fetch(`${invoUrl}${appId}/comments/`, {
-    method: 'POST',
-    headers: { 'Content-type': 'application/json' },
-    body: JSON.stringify({
-      item_id: name,
-      username: user,
-      comment: com,
-    }),
-  });
-  await response.json();
-};
-
-const addLike = async (name) => {
-  const response = await fetch(`${invoUrl}${appId}/likes/`, {
-    method: 'POST',
-    headers: { 'Content-type': 'application/json' },
-    body: JSON.stringify({
-      item_id: name,
-    }),
-  });
-  await response.json();
-};
 
 let likes = await getLikes();
 
@@ -70,6 +34,7 @@ const displayPokemon = (pokemon) => {
   butt.addEventListener('click', () => {
     const modalContainer = document.querySelector('.modal-container');
     modalContainer.style.display = 'block';
+    main.style.display = 'none';
     modalContainer.innerHTML = `<div class="modal-image">
         <img src="${pokemon.sprites.front_shiny}" alt="pokemon-image" class="pokemon-image">
         <img src="${pokemon.sprites.back_shiny}" alt="pokemon-image2" class="pokemon-image">
@@ -83,7 +48,7 @@ const displayPokemon = (pokemon) => {
         <span>Type: ${pokemon.types[0].type.name}</span>
       </div>
       <div class="comments">
-        <h3 class="commentsTitle">Comments</h3>
+        <h3 class="commentsTitle">Comments<span class="comments-number"></span></h3>
         <div class="actual-comments">
         </div>
       </div>
@@ -92,41 +57,29 @@ const displayPokemon = (pokemon) => {
         <form action="#">
           <input type="text" id="name" name="name" placeholder="Your name">
           <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your insights"></textarea>
-          <button type="submit">Comment</button>
+          <button type="submit" class="submit">Comment</button>
         </form>
       </div>`;
 
     const close = document.querySelector('.close');
     close.addEventListener('click', () => {
       modalContainer.style.display = 'none';
+      main.style.display = 'grid';
     });
-    const commentsField = document.querySelector('.actual-comments');
+
     const name = document.querySelector('#name');
     const comment = document.querySelector('#comment');
     const form = document.querySelector('form');
-
-    const displayComments = async () => {
-      commentsField.innerHTML = '';
-      let comments = [];
-      comments = await getComments(pokemon.name) || [];
-      if (comments.length !== 0) {
-        comments.forEach((comment) => {
-          const commentContainer = document.createElement('p');
-          commentContainer.innerHTML = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
-          commentsField.appendChild(commentContainer);
-        });
-      }
-    };
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       addComment(pokemon.name, name.value, comment.value);
       document.querySelector('#comment').value = '';
       document.querySelector('#name').value = '';
-      setTimeout(displayComments, 2000);
+      setTimeout(displayComments(pokemon.name), 2000);
     });
 
-    displayComments();
+    displayComments(pokemon.name);
   });
 
   const poke = document.querySelector(`#pokemon${pokemon.id}`);
@@ -170,10 +123,10 @@ const getPokemons = async () => {
 
 getPokemons();
 
-const countItems = async () => {
-  const numberOfItems = document.querySelectorAll('.pokeContainer').length;
+const displayCountItems = async () => {
+  const number = countItems();
   const items = document.querySelector('.all-items');
-  items.innerHTML = `(${numberOfItems})`;
-};
+  items.innerHTML = `(${number})`;
+}
 
-setTimeout(countItems, 3000);
+setTimeout(displayCountItems , 3000);
