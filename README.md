@@ -7,7 +7,7 @@
   The data of the webapp will be provided by the chosen API. 
   The webapp will have a home page showing a list of items that can be "liked".
   The webapp will contain a popup window with more data about an item which can be "commented".
-  The counters are made to count the number of "like"s and the "comments".
+  The counters are made to count the numbers of "like" and "comments".
   The tests are also incorporated for the counters.
 
 
@@ -36,7 +36,7 @@ GITFLOW
 
 ## Getting Started
 
-Create a repository, clone it in the local location. Git flow is used. Webpack is set up. Javascript testing library is set up. Set up the To-Do-List in the Kanban Board.
+Created a repository, cloned it in the local location. Git flow is used. Webpack is set up. Javascript testing library is set up. To-Do-List in the Kanban Board is set up.
 
 ### Prerequisites
 
