@@ -19,7 +19,7 @@
 
 
 
-## Get Started
+## Getting Started
 
 To get the content of this project locally you need to run the following commands in your terminal.
 
@@ -30,7 +30,7 @@ To get the content of this project locally you need to run the following command
 ### Setup
 1. Download the **Zip** file or clone the repo with:
 ```bash
-git clone https://github.com/Samuellekpor/leaderboard.git
+git clone https://github.com/Samuellekpor/Pokemon-WebApp.git
 ```
 2. To access cloned directory run:
 ```bash
