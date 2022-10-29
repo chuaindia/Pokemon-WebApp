@@ -48,7 +48,6 @@ Created a repository, cloned it in the local location. Git flow is used. Webpack
 
 ### Run tests
 
-### Deployment
 
 
 ## Authors
