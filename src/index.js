@@ -48,7 +48,6 @@ const displayPokemon = (pokemon) => {
         <span>Type: ${pokemon.types[0].type.name}</span>
       </div>
       <div class="comments">
-
         <h3 class="commentsTitle">Comments<span class="comments-number"></span></h3>
         <div class="actual-comments">
         </div>
@@ -58,7 +57,7 @@ const displayPokemon = (pokemon) => {
         <form action="#">
           <input type="text" id="name" name="name" placeholder="Your name">
           <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your insights"></textarea>
-          <button class="submit" type="submit">Comment</button>
+          <button type="submit" class="submit">Comment</button>
         </form>
       </div>`;
 
@@ -71,15 +70,6 @@ const displayPokemon = (pokemon) => {
     const name = document.querySelector('#name');
     const comment = document.querySelector('#comment');
     const form = document.querySelector('form');
-    const commentsCount = () => {
-      const alComments = commentsField.childElementCount;
-      return alComments;
-    };
-    const displayNumberComments = async () => {
-      const number = commentsCount();
-      const comments = document.querySelector('.comments-number');
-      comments.innerHTML = `(${number})`;
-    };
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
