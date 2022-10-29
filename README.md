@@ -51,7 +51,6 @@ Created a repository, cloned it in the local location. Git flow is used. Webpack
 ### Deployment
 
 
-
 ## Authors
 
 👤 **Sammuel Lekpor**
